@@ -1,1 +1,21 @@
 <h1>Test of WebPanel</h1>
+<script>
+function getSummary() {
+var key = this.JIRA.Issue.getIssueKey(); 
+var summary;
+     AJS.$.ajax({
+        url: "/rest/api/2/issue/" + key,
+        type: 'get',
+        dataType: 'json',
+        async: false,
+        success: function(data) {
+            summary = data.fields.summary;
+        }
+     });
+  
+     return summary;
+};
+
+getSummary();
+  </script>
+<h2>End</h2>
