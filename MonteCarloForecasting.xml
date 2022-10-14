@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
   <ModulePrefs
-    title="JIRA BlockChain Viewer"
-    author="MR.ADDON raulpelaez@mraddon.com www.mraddon.com"
+    title="MonteCarlo Forecasting"
+    author="Raul Pelaez & Ignacio Ortega"
     thumbnail="https://jirasupport.files.wordpress.com/2017/11/blockchain-viewer-for-jira1.png"
     screenshot="https://jirasupport.files.wordpress.com/2017/11/blockchain-viewer-for-jira1.png"
-    description="Control all time the price of the main BlockChain virtual currencies: Bitcoin, Ethereum, Litecoin,...">
+    description="MonteCarlo Forecasting">
 
     <Require feature="minimessage" />
     <Require feature="dynamic-height" />
@@ -24,102 +24,7 @@
 
   <Content type="html">
   <![CDATA[
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<style>
-.button {
-  color: #900;
-  font-weight: bold;
-  font-size: 150%;
-  text-transform: uppercase;
-  width: 100%;
-  background: #FF0;
-  border: 1px solid #900;
-}
-
-body {
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; font-style: normal; color: black;
-}
-
-body {
-    background-color: white;
-}
-
-h1 {
-    background-color: black;
-}
-
-p {
-    background-color: black;
-}
-
-
-</style>
-<button onclick="reemplazar()" name="COLLAPSE COINS!">COLLAPSE COINS!</button>
-<div style="overflow: auto; width: 100%; height: 100%;">
-<table>
-<tr><td>
-<table>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="ethereum" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/ethereum/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1027.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="bitcoin" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/bitcoin/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currencyid="3602" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/bitcoin-sv/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/3602.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="bitcoin-cash" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/bitcoin-cash/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1831.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="bitcoin-gold" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/bitcoin-gold/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/2083.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="iota" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/iota/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1720.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="ties-network" data-base="EUR"  data-secondary="USD"></div></td><td><a href="https://coinmarketcap.com/currencies/ties-network/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/2166.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="litecoin" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/litecoin/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/2.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="aragon" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/assets/aragon/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1680.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="bancor" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/assets/bancor/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1727.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="gnosis-gno" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/assets/gnosis-gno/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1659.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="golem-network-tokens" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/assets/golem-network-tokens/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1455.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="augur" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/assets/augur/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1104.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="ethereum-classic" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/ethereum-classic/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1321.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="ripple" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/ripple/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/52.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="qtum" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/qtum/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1684.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="monero" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/monero/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/328.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="dash" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/dash/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/131.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="steem" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/steem/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1230.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="nem" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/nem/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/873.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="tron" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/tron/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1958.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="basic-attention-token" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/basic-attention-token/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1697.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="nano" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/nano/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1567.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="eos" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/eos/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1765.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="omisego" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/omisego/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1808.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="cardano" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/cardano/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/2010.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="district0x" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/district0x/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1856.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="tenx" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/tenx/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1758.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="status" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/status/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1759.png" style="width:300px;"></a></td></tr>
-<tr><td><div class="coinmarketcap-currency-widget" data-currency="singularitynet" data-base="EUR"  data-secondary="USD"></td><td><a href="https://coinmarketcap.com/currencies/singularitynet/#charts" target="new"><img src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/2424.png" style="width:300px;"></a></td></tr>
-</table>
-</td></tr>
-<table style="background-color: white; width:100%;">
-    <tr><td><center><br><a href="http://www.MrAddon.com" target="new"><img src="https://jirasupport.files.wordpress.com/2017/11/mr-addon-23.png?w=200"></a><br><br>
-    <b></b>Download the perfect "Blockchain Viewer" complement for Chrome browsers:</b><br><a href="https://chrome.google.com/webstore/detail/mraddon-blockchain-viewer/gfchpofllbnjfhgmjbgmhljdpolcjing?hl=es" target="new"><img src="https://jirasupport.files.wordpress.com/2017/11/blockchain-viewer-for-jira1.png?w=178&h=178"></a></center></td></tr>
-</table>        
-</table>  
-<b>If you see the app "Blockchain Viewer" useful, we accept ether donations at:<a href="https://etherscan.io/address/mraddon.eth" target="new">mraddon.eth</a></b><br>                                                                                                                                                                 
-<b>@MrAddon App for Atlassian JIRA, Google, Android</b> - Powered by <b>CoinMarketCap</b> <a href="https://coinmarketcap.com/api/" target="new">API</a> @2017
-</div>
-
-<script>
-
-function reemplazar() {
- var divs = document.getElementsByTagName("div");
-     for (var i = 0; i < divs.length; i++) {
-            var para = divs[i].getElementsByTagName("div");
-            if ( para[0] ) {
-            //alert(para.length)
-                if (para.length  == 3 ){
-                  divs[i].id = "mraddon";  
-                  divs[i].style.visibility = "hidden";                  
-                  divs[i].innerHTML = "";
-                }
-            }
-      } 
-document.body.innerHTML = document.body.innerHTML.replace(/Powered by CoinMarketCap/g, '');
-}
-
-</script>
+<iframe src='/projects/AGILE?selectedItem=com.actionableagile.analytics.analyticsPlugin:analytics-page' style='width:100%;height:100px;'></iframe>
   ]]>
 </Content>
 </Module>
