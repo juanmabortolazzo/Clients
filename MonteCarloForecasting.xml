@@ -26,8 +26,34 @@
   <Content view="profile" type="html" preferred_height="700px">
   <![CDATA[
  <div style="overflow: auto; width: 100%; height: 1000px;">
-  <iframe  style='width:100%;height:1800px;' id="iframe" title="iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/s/sbudv7/820001/za3vhj/3.10.3/_/download/resources/aa.analytics:analyticsPlugin-resources/analytics.html">
+  <main role="main" id="sidebar-page-container" class="aui-page-panel-content">
+  <link type="text/css" rel="stylesheet" href="https://jira.edreamsodigeo.com/s/d41d8cd98f00b204e9800998ecf8427e-CDN/sbudv7/820001/za3vhj/3.10.3/_/download/batch/aa.analytics:split_3/aa.analytics:split_3.css" data-wrm-key="aa.analytics:split_3" data-wrm-batch-type="resource" media="all">
+  <link type="text/css" rel="stylesheet" href="https://jira.edreamsodigeo.com/s/d41d8cd98f00b204e9800998ecf8427e-CDN/sbudv7/820001/za3vhj/3.10.3/_/download/batch/aa.analytics:split_data-loading-main/aa.analytics:split_data-loading-main.css" data-wrm-key="aa.analytics:split_data-loading-main" data-wrm-batch-type="resource" media="all">
+  <script type="text/javascript" src="https://jira.edreamsodigeo.com/s/eaffaaacf5678ed3778504b6db610041-CDN/sbudv7/820001/za3vhj/3.10.3/_/download/batch/aa.analytics:split_3/aa.analytics:split_3.js?locale=en-US" data-wrm-key="aa.analytics:split_3" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+  <script type="text/javascript" src="https://jira.edreamsodigeo.com/s/eaffaaacf5678ed3778504b6db610041-CDN/sbudv7/820001/za3vhj/3.10.3/_/download/batch/aa.analytics:split_data-loading-main/aa.analytics:split_data-loading-main.js?locale=en-US" data-wrm-key="aa.analytics:split_data-loading-main" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+  <script type="text/javascript" src="https://jira.edreamsodigeo.com/s/eaffaaacf5678ed3778504b6db610041-CDN/sbudv7/820001/za3vhj/3.10.3/_/download/batch/aa.analytics:entrypoint-data-loading-main/aa.analytics:entrypoint-data-loading-main.js?locale=en-US" data-wrm-key="aa.analytics:entrypoint-data-loading-main" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+  <script type="text/javascript" src="https://jira.edreamsodigeo.com/s/d41d8cd98f00b204e9800998ecf8427e-CDN/sbudv7/820001/za3vhj/3.10.3/_/download/batch/aa.analytics:55degrees-actionable-jira/aa.analytics:55degrees-actionable-jira.js" data-wrm-key="aa.analytics:55degrees-actionable-jira" data-wrm-batch-type="resource" data-initially-rendered=""></script>
+  <script>    
+    /*var options = [];
+    options['context_path'] = AJS.contextPath();
+    console.log("context path:"+AJS.contextPath());
+    console.log(options);
+    AJS.$( document ).ready(function() {
+        console.log('AJS loading analytics into frame');
+        var analyticsPagePath = '/s/sbudv7/820001/za3vhj/3.10.3/_/download/resources/aa.analytics:analyticsPlugin-resources/analytics.html';
+        document.getElementById('iframe').src = analyticsPagePath;
+    });*/
+  </script>
+  <style> 
+  iframe {
+    width:100%;
+    height:80vh;
+  }
+  </style>
+  <span id="analytics_data" data-version="3.10.3" data-flaggedfield="Flagged" data-dataloaderaccess="false"></span></main>
+  <iframe  id="iframe" title="iframe"  style='width:100%;height:1800px;' id="iframe" title="iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/s/sbudv7/820001/za3vhj/3.10.3/_/download/resources/aa.analytics:analyticsPlugin-resources/analytics.html">
   </iframe>
+  </main>
  </div>
  <script>gadgets.window.adjustHeight();</script>
   ]]>
